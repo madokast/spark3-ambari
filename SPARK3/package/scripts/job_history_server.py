@@ -59,9 +59,10 @@ class JobHistoryServer(Script):
 
     # find path
     unzip_path = ""
-    for root, dirs, files in os.walk(path):
-      if "spark" in dirs:
-        unzip_path = os.path.join(root, dirs)
+    for root, dirs, files in os.walk("/tmp/seiois/spark3/unzip"):
+      for dir in dirs:
+        if dir.startswith("spark")
+          unzip_path = os.path.join(root, dir)
 
     if unzip_path == "":
       raise Exception("spark3 unzip path not found!")
