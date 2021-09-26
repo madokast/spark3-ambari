@@ -87,7 +87,7 @@ def setup_spark(env, type, upgrade_type = None, action = None):
 
 
 
-  spark2_defaults = dict(params.config['configurations']['spark3-defaults'])
+  spark3_defaults = dict(params.config['configurations']['spark3-defaults'])
 
   if params.security_enabled:
     spark3_defaults.pop("history.server.spnego.kerberos.principal")
