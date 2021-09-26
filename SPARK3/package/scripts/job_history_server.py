@@ -56,6 +56,7 @@ class JobHistoryServer(Script):
 
     # find path
     unzip_path = os.listdir("/tmp/seiois/spark3/unzip")[0]
+    unzip_path = os.path.join("/tmp/seiois/spark3/unzip",unzip_path)
     # rename
     Execute("mv {0} {1}".format(unzip_path, params.spark_home))
 
