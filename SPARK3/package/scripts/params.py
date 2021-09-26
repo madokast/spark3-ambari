@@ -54,14 +54,13 @@ HIVE_SERVER_ROLE_DIRECTORY_MAP = {
   'HIVE_SERVER_INTERACTIVE' : 'hive-server2'
 }
 
-component_directory = Script.get_component_from_role(SERVER_ROLE_DIRECTORY_MAP, "SPARK3_CLIENT")
+component_directory = "spark3"
 hive_component_directory = Script.get_component_from_role(HIVE_SERVER_ROLE_DIRECTORY_MAP, "HIVE_CLIENT")
 
 config = Script.get_config()
 
 # download_path & install_path
 download_path = config['configurations']['spark3-deploy']['download_path']
-install_path = config['configurations']['spark3-deploy']['install_path']
 
 tmp_dir = Script.get_tmp_dir()
 sudo = AMBARI_SUDO_BINARY

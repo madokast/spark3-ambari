@@ -43,8 +43,30 @@ class JobHistoryServer(Script):
     # self.install_packages(env)
     import params
     env.set_params(params)
-    Execute("wget --no-check-certificate {0} -O /tmp/seiois/spark3.tgz".format(params.download_path))
-    Execute("tar -zxf /tmp/seiois/spark3.tgz -C {0}".format(params.install_path))
+    if os.path.exists(params.spark_home):
+      return
+
+    Execute("mkdir /tmp/seiois")
+    Execute("mkdir /tmp/seiois/spark3")
+    Execute("mkdir /tmp/seiois/spark3/unzip")
+
+    # download
+    Execute("wget --no-check-certificate {0} -O /tmp/seiois/spark3/spark3.tgz".format(params.download_path))
+
+    # unzip
+    Execute("tar -zxf /tmp/seiois/spark3.tgz -C /tmp/seiois/spark3/unzip")
+
+    # find path
+    unzip_path = ""
+    for root, dirs, files in os.walk(path):
+      if "spark" in dirs:
+        unzip_path = os.path.join(root, dirs)
+
+    if unzip_path == "":
+      raise Exception("spark3 unzip path not found!")
+
+    # rename
+    Execute("mv {0} {1}".format(unzip_path, params.spark_home))
 
     self.configure(env)
     
