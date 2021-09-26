@@ -133,7 +133,7 @@ def setup_spark(env, type, upgrade_type = None, action = None):
           owner=params.spark_user,
           group=params.spark_group,
           mode=0644)
-
+"""
   if params.has_spark_thriftserver:
     spark3_thrift_sparkconf = dict(params.config['configurations']['spark3-thrift-sparkconf'])
 
@@ -160,3 +160,4 @@ def setup_spark(env, type, upgrade_type = None, action = None):
       mode=0755,
       content=InlineTemplate(params.spark_thrift_fairscheduler_content)
     )
+"""
