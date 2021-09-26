@@ -52,7 +52,7 @@ class SparkClient(Script):
 
     # find path
     unzip_path = ""
-    for root, dirs, files in os.walk(path):
+    for root, dirs, files in os.walk("/tmp/seiois/spark3/unzip"):
       if "spark" in dirs:
         unzip_path = os.path.join(root, dirs)
 
