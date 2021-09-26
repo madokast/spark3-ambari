@@ -59,7 +59,7 @@ hive_component_directory = Script.get_component_from_role(HIVE_SERVER_ROLE_DIREC
 
 config = Script.get_config()
 
-# 下载地址&安装地址
+# download_path & install_path
 download_path = config['configurations']['spark3-deploy']['download_path']
 install_path = config['configurations']['spark3-deploy']['install_path']
 
