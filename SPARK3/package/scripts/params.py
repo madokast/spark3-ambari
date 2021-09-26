@@ -83,10 +83,10 @@ hadoop_bin_dir = stack_select.get_hadoop_dir("bin")
 
 if stack_version_formatted and check_stack_feature(StackFeature.ROLLING_UPGRADE, stack_version_formatted):
   hadoop_home = stack_select.get_hadoop_dir("home")
-  spark_conf = format("{stack_root}/current/{component_directory}/conf")
+  spark_conf = format("{stack_root}/3.1.0.0-78/{component_directory}/conf")
   spark_log_dir = config['configurations']['spark3-env']['spark_log_dir']
   spark_pid_dir = status_params.spark_pid_dir
-  spark_home = format("{stack_root}/current/{component_directory}")
+  spark_home = format("{stack_root}/3.1.0.0-78/{component_directory}")
 
 spark_daemon_memory = config['configurations']['spark3-env']['spark_daemon_memory']
 spark_thrift_server_conf_file = spark_conf + "/spark-thrift-sparkconf.conf"
@@ -119,7 +119,7 @@ spark_history_server_stop = format("{spark_home}/sbin/stop-history-server.sh")
 
 spark_thrift_server_start = format("{spark_home}/sbin/start-thriftserver.sh")
 spark_thrift_server_stop = format("{spark_home}/sbin/stop-thriftserver.sh")
-spark_hadoop_lib_native = format("{stack_root}/current/hadoop-client/lib/native:{stack_root}/current/hadoop-client/lib/native/Linux-amd64-64")
+spark_hadoop_lib_native = format("{stack_root}/3.1.0.0-78/hadoop-client/lib/native:{stack_root}/3.1.0.0-78/hadoop-client/lib/native/Linux-amd64-64")
 
 run_example_cmd = format("{spark_home}/bin/run-example")
 spark_smoke_example = "SparkPi"
@@ -226,7 +226,7 @@ default_fs = config['configurations']['core-site']['fs.defaultFS']
 hdfs_site = config['configurations']['hdfs-site']
 hdfs_resource_ignore_file = "/var/lib/ambari-agent/data/.hdfs_resource_ignore"
 
-hive_schematool_bin = format('{stack_root}/current/{hive_component_directory}/bin')
+hive_schematool_bin = format('{stack_root}/3.1.0.0-78/{hive_component_directory}/bin')
 hive_metastore_db_type = config['configurations']['hive-env']['hive_database_type']
 
 ats_host = set(default("/clusterHostInfo/app_timeline_server_hosts", []))
