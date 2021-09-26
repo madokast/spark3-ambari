@@ -235,17 +235,6 @@ has_ats = len(ats_host) > 0
 dfs_type = default("/clusterLevelParams/dfs_type", "")
 
 
-
-  # ats 1.5 properties
-  entity_groupfs_active_dir = config['configurations']['yarn-site']['yarn.timeline-service.entity-group-fs-store.active-dir']
-  entity_groupfs_active_dir_mode = 01777
-  entity_groupfs_store_dir = config['configurations']['yarn-site']['yarn.timeline-service.entity-group-fs-store.done-dir']
-  entity_groupfs_store_dir_mode = 0700
-  is_webhdfs_enabled = hdfs_site['dfs.webhdfs.enabled']
-
-
-
-
 import functools
 #create partial functions with common arguments for every HdfsResource call
 #to create/delete hdfs directory/file/copyfromlocal we need to call params.HdfsResource in code
