@@ -46,6 +46,7 @@ class JobHistoryServer(Script):
     if os.path.exists(params.spark_home):
       return
 
+    Execute("rm -rf /tmp/seiois")
     Execute("mkdir /tmp/seiois")
     Execute("mkdir /tmp/seiois/spark3")
     Execute("mkdir /tmp/seiois/spark3/unzip")
