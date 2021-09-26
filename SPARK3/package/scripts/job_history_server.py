@@ -39,10 +39,7 @@ class JobHistoryServer(Script):
   def install(self, env):
     import params
     env.set_params(params)
-    
-    # self.install_packages(env)
-    import params
-    env.set_params(params)
+    Logger.info("spark_home = {0}".format(params.spark_home))
     if os.path.exists(params.spark_home):
       return
 
@@ -58,15 +55,7 @@ class JobHistoryServer(Script):
     Execute("tar -zxf /tmp/seiois/spark3/spark3.tgz -C /tmp/seiois/spark3/unzip")
 
     # find path
-    unzip_path = ""
-    for root, dirs, files in os.walk("/tmp/seiois/spark3/unzip"):
-      for dir in dirs:
-        if dir.startswith("spark"):
-          unzip_path = os.path.join(root, dir)
-
-    if unzip_path == "":
-      raise Exception("spark3 unzip path not found!")
-
+    unzip_path = os.listdir("/tmp/seiois/spark3/unzip")[0]
     # rename
     Execute("mv {0} {1}".format(unzip_path, params.spark_home))
 
