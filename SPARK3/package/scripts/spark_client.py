@@ -48,7 +48,7 @@ class SparkClient(Script):
     Execute("wget --no-check-certificate {0} -O /tmp/seiois/spark3/spark3.tgz".format(params.download_path))
 
     # unzip
-    Execute("tar -zxf /tmp/seiois/spark3.tgz -C /tmp/seiois/spark3/unzip")
+    Execute("tar -zxf /tmp/seiois/spark3/spark3.tgz -C /tmp/seiois/spark3/unzip")
 
     # find path
     unzip_path = ""
