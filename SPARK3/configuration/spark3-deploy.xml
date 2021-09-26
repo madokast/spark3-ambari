@@ -20,10 +20,4 @@
     <value>http://package.rml.net.cn/spark/spark-3.1.2-bin-hadoop3.2.tgz</value>
     <description>服务安装文件存放地址</description>
   </property>
-
-  <property>
-    <name>install_path</name>
-    <value>/usr/hdp/3.1.0.0-78</value>
-    <description>安装地址</description>
-  </property>
 </configuration>
