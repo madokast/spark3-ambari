@@ -55,7 +55,7 @@ class SparkClient(Script):
     unzip_path = ""
     for root, dirs, files in os.walk("/tmp/seiois/spark3/unzip"):
       for dir in dirs:
-        if dir.startswith("spark")
+        if dir.startswith("spark"):
           unzip_path = os.path.join(root, dir)
 
     if unzip_path == "":
