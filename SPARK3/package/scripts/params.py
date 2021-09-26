@@ -44,10 +44,7 @@ sudo = AMBARI_SUDO_BINARY
 SERVER_ROLE_DIRECTORY_MAP = {
   'SPARK3_JOBHISTORYSERVER' : 'spark3-historyserver',
   'SPARK3_CLIENT' : 'spark3-client',
-  'SPARK3_THRIFTSERVER' : 'spark3-thriftserver',
-  'LIVY2_SERVER' : 'livy2-server',
-  'LIVY2_CLIENT' : 'livy2-client'
-
+  'SPARK3_THRIFTSERVER' : 'spark3-thriftserver'
 }
 
 HIVE_SERVER_ROLE_DIRECTORY_MAP = {
